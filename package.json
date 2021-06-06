@@ -1,0 +1,82 @@
+{
+    "name": "mrktplc-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@craco/craco": "^6.1.1",
+        "@testing-library/jest-dom": "^5.11.10",
+        "@testing-library/react": "^11.2.6",
+        "@testing-library/user-event": "^12.8.3",
+        "axios": "^0.21.1",
+        "eslint-config-prettier": "^8.3.0",
+        "history": "^4.10.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "web-vitals": "^1.1.1"
+    },
+    "scripts": {
+        "start": "craco start",
+        "build": "craco build",
+        "eject": "react-scripts eject",
+        "test": "react-scripts test",
+        "test:coverage": "npm run test -- --coverage --watchAll=false",
+        "test:ci": "cross-env CI=true react-scripts test --env=jsdom --passWithNoTests",
+        "lint": "eslint --ext .js,.jsx .",
+        "lint:fix": "eslint --fix --ext .js,.jsx .",
+        "format": "npx prettier --check .",
+        "format:fix": "npx prettier --write .",
+        "fix": "npm run format:fix && npm run lint:fix",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx}": [
+            "npm run format:fix",
+            "npm run lint:fix"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "jest": {
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss7-compat": "^2.1.0",
+        "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+        "autoprefixer": "^9.8.6",
+        "cross-env": "^7.0.3",
+        "enzyme": "^3.11.0",
+        "enzyme-to-json": "^3.6.2",
+        "eslint": "^7.26.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-plugin-import": "^2.23.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.23.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "postcss": "^7.0.35",
+        "prettier": "2.3.0",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
+    }
+}
